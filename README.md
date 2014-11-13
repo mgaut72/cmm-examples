@@ -11,6 +11,18 @@ to gcc to actually compile it.
 
 The result is an executable `a.out`
 
+Testing your compiler vs gcc
+==
+
+```
+COMPILER=$YOUR_COMPILER MILESTONE=1 ./test.sh
+```
+
+`COMPILER` should be the path to your compiler executable.
+
+`MILESTONE` should be `1` or `2` or `both` which indicates which files to
+test with.
+
 Contributing
 ===
 
