@@ -6,9 +6,7 @@ int main(void){
 
     x = 5;
     i = 0;
-    print_string("should get: 120\ngot: ");
     print_int(fact(x));
-    print_string("\n\n");
     return i;
 }
 
