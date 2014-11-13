@@ -74,4 +74,11 @@ void main(void){
     print_string("should NOT get 999998990 due to overflow\ngot: ");
     print_int(c);
     print_string("\n\n");
+
+    /* signedness of chars */
+    x = 128; /* = 0...0 1000 0000 should be negative when converted to char */
+    c = x;
+    print_string("should get -128 due to chars being signed\ngot: ");
+    print_int(c);
+    print_string("\n\n");
 }
