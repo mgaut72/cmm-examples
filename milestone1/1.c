@@ -1,7 +1,6 @@
 extern void print_int(int x);
 extern void print_string(char c[]);
 
-// any kind of global variable is allowed
 int intVar;
 int intArr[4];
 
@@ -71,7 +70,6 @@ void main(void){
     print_int(c);
     print_string("\n\n");
 
-    //overflow in LitInt -> Char
     c = 999998990;
     print_string("should NOT get 999998990 due to overflow\ngot: ");
     print_int(c);
