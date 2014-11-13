@@ -16,7 +16,7 @@ Contributing
 
 To contribute, please submit a pull request, or request to be added as an admin of the repository.
 
-Please contribute valid C-- files only.
+Please contribute valid C-- files, or other improvements to this test suite.
 If you notice something is not to spec, go ahead and create an
 issue or comment on the file or something.
 
