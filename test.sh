@@ -30,6 +30,11 @@ fi
 find $DIR -type f -iname "*.c" -print0 | while IFS= read -r -d $'\0' line;
 do
     echo "testing : $line"
+
     make name=$line > /dev/null 2> /dev/null
-    diff <(./a.out && rm -f a.out) <(cat $line | $COMPILE | spim -file /dev/stdin 2> /dev/null | tail -n +6)
+    cat $line | $COMPILE > myout.s
+
+    diff <(./a.out) <(spim -file myout.s | tail -n +6)
+
+    rm -f ./a.out myout.s
 done
