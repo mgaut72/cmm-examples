@@ -11,7 +11,7 @@
 if [ -z ${COMPILE+x} ]
 then
     echo "expected environment variable COMPILE as your compiler path"
-    echo "ex: COMPILE=/my/compiler.exe test.sh"
+    echo "ex: COMPILE=/my/compiler.exe ./test.sh"
     exit 1
 fi
 
@@ -32,9 +32,10 @@ do
     echo "testing : $line"
 
     make name=$line > /dev/null 2> /dev/null
-    cat $line | $COMPILE > myout.s
+    cat $line | $COMPILE > mymips
+    spim -file mymips | tail -n +2 > myout
 
-    diff <(./a.out) <(spim -file myout.s | tail -n +6)
+    diff <(./a.out) <(cat myout)
 
-    rm -f ./a.out myout.s
+    rm -f ./a.out mymips myout
 done
