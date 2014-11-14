@@ -15,6 +15,13 @@ then
     exit 1
 fi
 
+# numer of lines spim insists on printing.  default is 2 for lectura.
+# its 6 for my machine, for whatever reason
+if [ -z ${SL+x} ]
+then
+    SL=2
+fi
+
 if [ -z ${MILESTONE+x} ]
 then
     MILESTONE=1
@@ -33,7 +40,7 @@ do
 
     make name=$line > /dev/null 2> /dev/null
     cat $line | $COMPILE > mymips
-    spim -file mymips | tail -n +2 > myout
+    spim -file mymips | tail -n +$SL > myout
 
     diff <(./a.out) <(cat myout)
 
