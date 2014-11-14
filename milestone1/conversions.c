@@ -81,4 +81,10 @@ void main(void){
     print_string("should get -128 due to chars being signed\ngot: ");
     print_int(c);
     print_string("\n\n");
+
+    /* sign extension of char -> int */
+    x = c;
+    print_string("should get -128 due to chars being signed\ngot: ");
+    print_int(x);
+    print_string("\n\n");
 }
