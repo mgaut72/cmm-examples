@@ -11,7 +11,7 @@
 if [ -z ${COMPILE+x} ]
 then
     echo "expected environment variable COMPILE as your compiler path"
-    echo "ex: COMPILE=/my/compiler.exe test.sh"
+    echo "ex: COMPILE=/my/compiler.exe ./test.sh"
     exit 1
 fi
 
@@ -31,5 +31,10 @@ find $DIR -type f -iname "*.c" -print0 | while IFS= read -r -d $'\0' line;
 do
     echo "testing : $line"
     make name=$line > /dev/null 2> /dev/null
-    diff <(./a.out && rm -f a.out) <(cat $line | $COMPILE | spim -file /dev/stdin 2> /dev/null | tail -n +6)
+    cat $line | $COMPILE > mymips
+    spim -file mymips | tail -n +2 > myout
+
+    diff <(./a.out) <(cat myout)
+
+    rm -f ./a.out mymips myout
 done
