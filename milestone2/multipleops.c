@@ -25,7 +25,12 @@ void main(void)
   print_int(num);
   print_string("\n");
 
-  num = 24 / (14 - 2);
+  num = '2' / 25 + 8;
+  print_string("Should get 10\nGot: ");
+  print_int(num);
+  print_string("\n");
+
+  num = 24 / ('1' - 37);
   print_string("Should get 2\nGot: ");
   print_int(num);
   print_string("\n");
