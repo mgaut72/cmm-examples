@@ -1,14 +1,16 @@
-/* a single global int variable; a single assignment */
+/* assignment of global scalars of type char */
 
 extern void print_int(int x);
 extern void print_string(char x[]);
 
-int x;
+char x, y, z;
 
 void main(void)
 {
-  x = 123;
+  x = 'a';
+  y = x;
+  z = y;
 
-  print_int(x);
+  print_int(z);
   print_string("\n");
 }

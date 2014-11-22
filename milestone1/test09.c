@@ -1,15 +1,15 @@
-/* a single global int variable; multiple assignments */
+/* type conversion: char to int without need for sign extension */
 
 extern void print_int(int x);
 extern void print_string(char x[]);
 
 int x;
+char y;
 
 void main(void)
 {
-  x = 123;
-  x = 456;
-  x = 789;
+  y = 'a';
+  x = y;
 
   print_int(x);
   print_string("\n");

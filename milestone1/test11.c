@@ -1,13 +1,14 @@
-/* assignment of global scalars of type int */
+/* type conversion: int->char->int with need for sign extension */
 
 extern void print_int(int x);
 extern void print_string(char x[]);
 
-int x, y, z;
+int x, z;
+char y;
 
 void main(void)
 {
-  x = 123;
+  x = 65535;
   y = x;
   z = y;
 

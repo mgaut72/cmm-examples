@@ -1,11 +1,14 @@
-extern void print_string(char word[]);
+/* a single global char variable; a single assignment of a char constant */
 
-void foo(char text[])
-{
-   print_string(text);
-}
+extern void print_int(int x);
+extern void print_string(char x[]);
+
+char x;
 
 void main(void)
 {
-   foo("this is in main\n");
+  x = 'a';
+
+  print_int(x);
+  print_string("\n");
 }

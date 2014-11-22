@@ -1,25 +1,14 @@
-int z;
+/* a single global char variable; a single assignment of an int constant */
 
 extern void print_int(int x);
+extern void print_string(char x[]);
 
-void foo(int num)
-{
-   print_int(num);
-}
+char x;
 
 void main(void)
 {
+  x = 10;
 
-    z = 4;
-
-    foo(z);
-
-    z = 3;
-
-    foo(z);
-
-    z = 2;
-
-    foo(z);
-
+  print_int(x);
+  print_string("\n");
 }

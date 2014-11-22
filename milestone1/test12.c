@@ -1,16 +1,19 @@
-/* a single global int variable; multiple assignments */
+/* type conversion: char->int->char */
 
 extern void print_int(int x);
 extern void print_string(char x[]);
 
 int x;
+char y, z;
 
 void main(void)
 {
-  x = 123;
-  x = 456;
-  x = 789;
+  y = '\n';
+  x = y;
+  z = x;
 
   print_int(x);
+  print_string("\n");
+  print_int(z);
   print_string("\n");
 }
