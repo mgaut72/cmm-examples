@@ -3,7 +3,7 @@ extern void print_string(char x[]);
 
 void main(void)
 {
-  int num;
+    int num;
 
     num = 6 + 2;
     print_string("Should get 8\nGot: ");
