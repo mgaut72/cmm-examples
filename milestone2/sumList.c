@@ -12,6 +12,7 @@ int main(void){
     i = 0;
     while(i <= 9){
         sum = sum + list[i];
+        i = i + 1;
     }
 
     return sum;
