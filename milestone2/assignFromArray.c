@@ -1,6 +1,13 @@
 extern void print_int(int i);
 extern void print_string(char c[]);
 
+void indirect2(int arr[]) {
+    /* make sure we passed value correctly */
+    print_string("should get 100\ngot: ");
+    print_int(arr[1]);
+    print_string("\n\n");
+}
+
 void indirect(int a){
     /* make sure we passed value correctly */
     print_string("should get 100\ngot: ");
@@ -32,6 +39,9 @@ void main(void){
 
     /* test passing an array element */
     indirect(intArr[1]);
+
+    /* test passing an array element */
+    indirect2(intArr);
 
     /* test that changing local in indirect didn't change intArr */
     print_string("should get 100\ngot: ");
