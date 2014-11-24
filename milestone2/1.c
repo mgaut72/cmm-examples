@@ -6,7 +6,7 @@ char c;
 
 void main(void){
 
-    // check signed-ness of char -> int conversion
+    /* check signed-ness of char -> int conversion */
     x = -1;
     c = x;
     print_string("should get -1\ngot: ");
@@ -18,7 +18,7 @@ void main(void){
     print_int(x);
     print_string("\n\n");
 
-    // check signed-ness of char -> int conversion
+    /* check signed-ness of char -> int conversion */
     x = -2147483648;
     print_string("should get -2147483648\ngot: ");
     print_int(x);
