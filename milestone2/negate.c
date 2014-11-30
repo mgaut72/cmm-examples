@@ -18,7 +18,7 @@ void main(void){
     print_string("Bar\n");
   }
 
-  print_string("\nShould not print anything else\n");
+  print_string("\nShould print Boo\n");
   if(x != 1) {
     if(!(x < 0) && y == 1) {
       print_string("Boo\n");

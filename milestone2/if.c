@@ -45,4 +45,12 @@ void main(void){
         print_string("elephant ");
     print_string("END\n");
     print_string("\n");
+
+    /* test then block that only has a ';' */
+    print_string("should get nothing before END\ngot: ");
+    if(x == 1)
+      ;
+    print_string("END\n");
+    print_string("\n");
+
 }
